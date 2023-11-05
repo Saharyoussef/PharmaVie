@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="575.0" prefWidth="796.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmavie.ProductsCL">
+   <children>
+      <Pane layoutX="250.0" layoutY="53.0" prefHeight="515.0" prefWidth="551.0">
+         <children>
+            <TableView fx:id="table" layoutX="-3.0" onMouseClicked="#clickTable" prefHeight="340.0" prefWidth="551.0" style="-fx-background-color: #F2F5ED;">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="101.60002136230469" text="ID" />
+                  <TableColumn fx:id="name" prefWidth="113.5999755859375" text="Name" />
+                  <TableColumn fx:id="price" prefWidth="114.39996337890625" text="Price" />
+                  <TableColumn fx:id="number" prefWidth="113.5999755859375" text="Number" />
+                  <TableColumn fx:id="type" prefWidth="107.199951171875" text="Type" />
+              </columns>
+               <effect>
+                  <DropShadow height="30.36" radius="14.68" spread="0.2" width="30.36">
+                     <color>
+                        <Color opacity="0.3981763422489166" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TableView>
+            <TextField fx:id="tfID" layoutX="20.0" layoutY="361.0" promptText="ID" />
+            <TextField fx:id="tfName" layoutX="202.0" layoutY="361.0" promptText="Name" />
+            <TextField fx:id="tfPrice" layoutX="372.0" layoutY="361.0" promptText="Price" />
+            <TextField fx:id="tfNumber" layoutX="128.0" layoutY="410.0" promptText="Number" />
+            <Button fx:id="btnAdd" layoutX="138.0" layoutY="452.0" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="63.0" style="-fx-background-color: #a3e139;" text="Add">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="1.29">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="btnDelete" layoutX="236.0" layoutY="452.0" mnemonicParsing="false" onAction="#delete" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #a3e139;" text="Delete">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="1.29">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="btnUpdate" layoutX="342.0" layoutY="452.0" mnemonicParsing="false" onAction="#update" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #a3e139;" text="Update">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="1.29">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <TextField fx:id="tfType" layoutX="313.0" layoutY="410.0" promptText="Type" />
+         </children>
+      </Pane>
+      <Pane layoutX="401.0" layoutY="5.0" prefHeight="40.0" prefWidth="236.0">
+         <children>
+            <TextField fx:id="tfSearch" layoutX="-154.0" prefHeight="40.0" prefWidth="551.0" promptText="Research">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="357.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@research.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnResearch" layoutX="337.0" layoutY="7.0" mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: white;" />
+         </children>
+      </Pane>
+      <Pane prefHeight="575.0" prefWidth="246.0">
+         <children>
+            <Pane layoutX="9.0" layoutY="14.0" prefHeight="59.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Admin Tools" textFill="#04724d">
+                     <font>
+                        <Font name="System Bold Italic" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="8.0" layoutY="82.0" prefHeight="359.0" prefWidth="226.0">
+               <children>
+                  <Button id="o" fx:id="o" layoutX="44.0" layoutY="6.0" mnemonicParsing="false" onAction="#OpenOverview" prefHeight="40.0" prefWidth="109.0" style="-fx-background-color: #E7F1D2;" text="Overview">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="0.0" radius="4.75">
+                           <color>
+                              <Color opacity="0.2583586871623993" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Button id="c" fx:id="c" layoutX="44.0" layoutY="274.0" mnemonicParsing="false" onAction="#OpenClients" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: #E7F1D2;" text="Clients">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="0.0" radius="4.75">
+                           <color>
+                              <Color opacity="0.25999999046325684" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Button id="s" fx:id="s" layoutX="44.0" layoutY="206.0" mnemonicParsing="false" onAction="#OpenSuppliers" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: #E7F1D2;" text="Suppliers">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="0.0" radius="4.75">
+                           <color>
+                              <Color opacity="0.25999999046325684" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Button id="e" fx:id="e" layoutX="46.0" layoutY="140.0" mnemonicParsing="false" onAction="#OpenEmployees" style="-fx-background-color: #E7F1D2;" text="Employees">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="0.0" radius="4.75">
+                           <color>
+                              <Color opacity="0.25999999046325684" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Button id="p" fx:id="p" layoutX="45.0" layoutY="73.0" mnemonicParsing="false" onAction="#OpenProducts" prefHeight="40.0" prefWidth="109.0" style="-fx-background-color: #E7F1D2;" text="Products">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="0.0" radius="4.75">
+                           <color>
+                              <Color opacity="0.25999999046325684" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="3.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@client.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="6.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@suppliers.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="6.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@employees.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="7.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@overview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="7.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@products.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fitHeight="163.0" fitWidth="149.0" layoutX="29.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="h" layoutY="549.0" mnemonicParsing="false" onAction="#OpenHelp" style="-fx-background-color: #04724D;" text="Help" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
